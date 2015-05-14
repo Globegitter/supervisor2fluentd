@@ -8,5 +8,5 @@ This script sends log lines from Supervisor to Fluentd. Supervisor2Fluentd perfo
  stderr_events_enabled and stdout_events_enabled to true. Now you only need to set the listener, which is something like this:
    
     [eventlistener:supervisor2fluentd]
-    command=python /path/the_log_sender.py
+    command=python /path/supervisor2fluentd.py
     events=PROCESS_LOG_STDERR,PROCESS_LOG_STDOUT
