@@ -31,7 +31,7 @@ def read_data():
 
 def send_logline(data):
     tag = '{0}.{1}'.format(data['processname'], data['channel'])
-    sender.setup('supervisor', host=config.FLUENTD_HOST, port=config.FLUENTD_PORT)
+    sender.setup('supervisor', host=config.FLUENTD_HOST, port=config.FLUENTD_PORT, nanosecond_precision=True)
     event.Event(tag, {'logline': data['logline']})
 
 
