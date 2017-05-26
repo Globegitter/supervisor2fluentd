@@ -34,7 +34,7 @@ def send_logline(data):
     tag = '{0}.{1}'.format(data['processname'], data['channel'])
     full_name = '{0}.{1}'.format('supervisor', tag)
     sender.setup('supervisor', host=config.FLUENTD_HOST, port=config.FLUENTD_PORT, nanosecond_precision=True)
-    event.Event(tag, {'hostname': socket.gethostname(), 'log_name': full_name, 'logline': data['logline']})
+    event.Event(tag, {'hostname': socket.gethostname(), 'logline': data['logline']})
 
 
 def main():
